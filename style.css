@@ -10,3 +10,14 @@
     background-size: cover;
     height: 90vh;
 }
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer form {
+    display: flex;
+    flex-direction: row;
+}
