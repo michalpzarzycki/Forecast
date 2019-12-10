@@ -1,0 +1,12 @@
+.navbar {
+    background: blue;
+    width: 100%;
+    height: 10vh;
+}
+
+.mainContainer {
+    background:url('/world.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+}
