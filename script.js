@@ -56,9 +56,15 @@ formButton.addEventListener('click', (e) => {
         .then(
             response => {
                 console.log("RESPONSE", response)
-                if (response.cod == "404") {
+                if(response.cod == "404") {
                     document.querySelector(".inputError").style.display = "block";
                     setTimeout(()=>{ document.querySelector(".inputError").style.display = "none"}, 5000)
+                }
+                if(response.cod == "200") {
+                    document.querySelector(".weatherDisplay").style.display = "block";
+                    document.querySelector("form").style.display = "none";
+                    document.querySelector(".weatherDisplay").textContent=`Temp: ${response.list[0].main.temp}`
+                   console.log(response.list[0].main.temp)
                 }
             }
 
