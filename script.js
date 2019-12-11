@@ -49,9 +49,9 @@ formButton.addEventListener('click', (e) => {
 
 
 
-    let cityName = inputForm.value.split(" ").join("");
+    let cityName = inputForm.value.split(" ").join("+");
     e.preventDefault();
-    let data = fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=073634a91c2b50b2af6e10147e4f385e`)
+     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=073634a91c2b50b2af6e10147e4f385e`)
         .then(data => data.json())
         .then(
             response => {
