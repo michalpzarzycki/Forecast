@@ -21,6 +21,12 @@
     align-items: center;
 }
 
+.inputError {
+    background: red;
+    color: white;
+    display:none;
+}
+
 .mainContainer form {
     display: flex;
     flex-direction: row;
