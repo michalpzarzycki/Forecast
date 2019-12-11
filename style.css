@@ -10,6 +10,10 @@
     background-size: cover;
     height: 90vh;
 }
+.locationTemp {
+    background: black;
+    color: white;
+}
 
 .mainContainer {
     display: flex;
