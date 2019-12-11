@@ -63,7 +63,7 @@ formButton.addEventListener('click', (e) => {
                 if(response.cod == "200") {
                     document.querySelector(".weatherDisplay").style.display = "block";
                     document.querySelector("form").style.display = "none";
-                    document.querySelector(".weatherDisplay").textContent=`Temp: ${response.list[0].main.temp}`
+                    document.querySelector(".weatherDisplay").textContent=`Temp: ${Math.round(response.list[0].main.temp-273.15)}`
                    console.log(response.list[0].main.temp)
                 }
             }
