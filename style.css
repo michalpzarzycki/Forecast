@@ -1,3 +1,8 @@
+*{
+    font-family: 'Roboto', sans-serif;
+
+}
+
 .navbar {
     background: blue;
     width: 100%;
@@ -15,10 +20,14 @@
     color: white;
 }
 .weatherDisplay {
-    widows: 500px;
-    height: 500px;
-    color: violet;
+    width: 800px;
+    height: 50vh;
+    color: white;
     display: none;
+    background: black;
+    opacity: 0.7;
+    font-family: 'Roboto', sans-serif;
+
 }
 .mainContainer {
     display: flex;
@@ -35,4 +44,8 @@
 .mainContainer form {
     display: flex;
     flex-direction: row;
+}
+
+#formButton {
+
 }
