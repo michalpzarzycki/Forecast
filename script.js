@@ -63,8 +63,15 @@ formButton.addEventListener('click', (e) => {
                 if(response.cod == "200") {
                     document.querySelector(".weatherDisplay").style.display = "block";
                     document.querySelector("form").style.display = "none";
-                    document.querySelector(".weatherDisplay").textContent=`Temp: ${Math.round(response.list[0].main.temp-273.15)}`
+                    document.querySelector(".temp").textContent=`Temp: ${Math.round(response.list[0].main.temp-273.15)}`
+                    document.querySelector(".feels_like").textContent = `Temp. odczuwalna: ${response.list[0].main.feels_like}`
+                    document.querySelector(".humidity").textContent = `Wilgotność: ${response.list[0].main.humidity}`
+                    document.querySelector(".pressure").textContent = `Ciśnienie: ${response.list[0].main.pressure}`
+
+
+
                    console.log(response.list[0].main.temp)
+                   console.log("ODP: ", response.list[0].main)
                 }
             }
 
