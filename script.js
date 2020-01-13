@@ -71,15 +71,12 @@ formButton.addEventListener('click', (e) => {
                     document.querySelector(".pressure").textContent = `Ciśnienie: ${response.list[0].main.pressure}`
                     document.querySelector(".pressure").innerHTML = '<img src="http://openweathermap.org/img/wn/'+ response.list[0].weather[0].icon +'@2x.png" />'
 
-                   console.log(response.list[0].main.temp)
-                   console.log("ODP: ", response.list[0].main)
-                   console.log("icon: ", response.list[0].weather[0].icon)
                 }
             }
 
         )
         .catch(err => {
-            alert("Lol")
+            alert("COŚ POSZŁO NIE TAK")
         })
 
 

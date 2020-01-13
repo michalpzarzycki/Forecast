@@ -55,6 +55,7 @@
     opacity: 0.7;
     font-family: 'Roboto', sans-serif;
 
+
 }
 .mainContainer {
     display: flex;
@@ -74,5 +75,16 @@
 }
 
 #formButton {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    transition:all 0.5s linear;
+    
+  
+}
 
+#formButton:hover {
+    background-color: white;
+    color:  rgba(0,0,0,1);
 }
