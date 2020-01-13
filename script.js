@@ -13,8 +13,11 @@ function fetchData(lat, long, apikey = "a54a5cf8aa1c0dcd3e1272b77860a1c9", lang 
         .then(data => data.json())
         .then(data => {
             const { temperature, summary } = data.currently;
-            localTemp.textContent = `Temp: ${temperature}°C `;
-            localSummary.textContent = `Summary: ${summary}`
+            localSummary.textContent = `${temperature}°C ${summary}`
+        })
+        .catch(()=>{
+            console.log("Something went wrong...")
+         
         });
 }
 
@@ -22,6 +25,8 @@ function fetchData(lat, long, apikey = "a54a5cf8aa1c0dcd3e1272b77860a1c9", lang 
 window.addEventListener('load', (event) => {
     let latitude;
     let longitude;
+    localSummary.textContent = "Brak dostępu do lokalizacji."
+    
     //Jeżeli zezwoliłeś na podanie swojej lokalizacji
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -29,10 +34,7 @@ window.addEventListener('load', (event) => {
             longitude = position.coords.longitude;
             fetchData(latitude, longitude);
         })
-    } else {
-        //Jeżeli nie zgodziłeś się podaj pogodę w jakimś losowym miejscu na świecie(wybór losowy z tablicy 10 miejsc)
-
-    }
+    } 
 
 
 })

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,18 +11,24 @@
 
     <title>Weather Forecast</title>
 </head>
+
 <body>
     <main>
         <div class="navbar">
-           <div class="localTemp"></div>
-           <div class="localSummary"></div>
+            <div class="leftSideNav">
+                <div class="localTemp">Pogoda w Twojej lokalizacji:</div>
+                <div class="localSummary"></div>
+            </div>
+            <div class="rightSideNav">
+                 <h1>FORECAST</h1>
+            </div>
         </div>
         <div class="mainContainer">
             <form class="mainContainerForm">
                 <label><input type="text" placeholder="enter the city" id="inputForm">
-                <div class="inputError">Brak miasta w bazie danych</div>
+                    <div class="inputError">Brak miasta w bazie danych</div>
                 </label>
-               
+
                 <button type="submit" id="formButton">SEARCH</button>
             </form>
             <div class="weatherDisplay">
@@ -34,4 +41,5 @@
     </main>
     <script src="/script.js"></script>
 </body>
+
 </html>
