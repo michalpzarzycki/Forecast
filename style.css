@@ -8,6 +8,7 @@
     width: 100%;
     height: 10vh;
     display: flex;
+    min-height: 85px;
 
 }
 .leftSideNav {

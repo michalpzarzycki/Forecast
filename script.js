@@ -13,7 +13,7 @@ function fetchData(lat, long, apikey = "a54a5cf8aa1c0dcd3e1272b77860a1c9", lang 
         .then(data => data.json())
         .then(data => {
             const { temperature, summary } = data.currently;
-            localSummary.textContent = `${temperature}°C ${summary}`
+            localSummary.textContent = `${Math.round(temperature)}°C ${summary}`
         })
         .catch(()=>{
             console.log("Something went wrong...")
@@ -27,7 +27,6 @@ window.addEventListener('load', (event) => {
     let longitude;
     localSummary.textContent = "Brak dostępu do lokalizacji."
     
-    //Jeżeli zezwoliłeś na podanie swojej lokalizacji
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
             latitude = position.coords.latitude;
@@ -65,10 +64,10 @@ formButton.addEventListener('click', (e) => {
                 if(response.cod == "200") {
                     document.querySelector(".weatherDisplay").style.display = "block";
                     document.querySelector("form").style.display = "none";
-                    document.querySelector(".temp").textContent=`Temp: ${Math.round(response.list[0].main.temp-273.15)}`
-                    document.querySelector(".feels_like").textContent = `Temp. odczuwalna: ${response.list[0].main.feels_like}`
-                    document.querySelector(".humidity").textContent = `Wilgotność: ${response.list[0].main.humidity}`
-                    document.querySelector(".pressure").textContent = `Ciśnienie: ${response.list[0].main.pressure}`
+                    document.querySelector(".temp").textContent=`Temp: ${Math.round(response.list[0].main.temp-273.15)}°C`
+                    document.querySelector(".feels_like").textContent = `Temp. odczuwalna:  ${Math.round(response.list[0].main.feels_like-273.15)}°C`
+                    document.querySelector(".humidity").textContent = `Wilgotność: ${response.list[0].main.humidity}%`
+                    document.querySelector(".pressure").textContent = `Ciśnienie: ${response.list[0].main.pressure}hPa`
                     document.querySelector(".pressure").innerHTML = '<img src="http://openweathermap.org/img/wn/'+ response.list[0].weather[0].icon +'@2x.png" />'
 
                 }
